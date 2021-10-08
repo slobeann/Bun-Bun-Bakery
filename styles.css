@@ -357,6 +357,7 @@ footer {
         font-style: normal;
         font-weight: normal;
         font-size: 40px;
+        margin-top: 0px;
         margin-bottom: 10px;
         background-color: #FFFDF7;
 }
@@ -370,7 +371,6 @@ label {
 
 .dropdown {
     width: 430px;   
-    height: 50px;
     border: 1px solid #252525;
     box-sizing: border-box;
     border-radius: 9px;
@@ -378,7 +378,28 @@ label {
     font-weight: normal;
     font-size: 16px;
     color: #B3B3B3;
+    padding: 15px;
+    background-color: #fffdf7;
+    background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    0px 0em;
+  background-repeat: no-repeat;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
+
 
 .secondary-button{
     border: 2px solid #FF4975;
@@ -435,5 +456,11 @@ form {
     border-radius: 10px;
     object-fit: fill;
     margin-top: 50px;
+}
+
+#pd-container {
+    padding: 20px;
+    padding-left: 0;
+
 }
 
