@@ -62,10 +62,20 @@ footer {
     gap:30px;
 }
 
+.location-container {
+    display:flex;
+    padding: 20px 150px;
+    align-items: center;
+}
+
 .location {
     display:flex;
     align-items: center;
     justify-content: left;
+}
+
+.location p {
+    margin: 0px;
 }
 a{
     text-decoration: none;
@@ -87,6 +97,32 @@ a span::after  {
     z-index: -1;
 }
 
+.tertiary a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FF4975;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 20px;
+    
+}
+
+.tertiary  span{
+    position:relative;
+    z-index: 1;
+}
+
+.tertiary span::after  {
+    content:"";
+    position:absolute;
+    width: 100%;
+    height: 7px;
+    background: #FFD8E1;
+    left:0;
+    bottom:0px;
+    z-index: -1;
+}
+
 /*landing page*/
 .introduction {
     padding:0px 150px;
@@ -97,7 +133,7 @@ a span::after  {
 }
 
 .container3 {
-    padding: 10px 150px;
+    padding: 20px 150px;
 }
 .banner {
     /* height: 600px; */
@@ -362,6 +398,15 @@ footer {
         background-color: #FFFDF7;
 }
 
+.pd p7 {
+    font-family: Helvetica Neue;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    color: #252525;
+    margin: 0px;
+}
+
 label {
     font-style: normal;
     font-weight: 600;
@@ -459,6 +504,7 @@ form {
 }
 
 #pd-container {
+    display:flex;
     padding: 20px;
     padding-left: 0;
 

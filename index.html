@@ -7,15 +7,21 @@
 <body>
 <div class="navigation">
     <ul>
-        <li style="float:left; font-family: 'Bodoni 72'; font-size: 30px;"><a href="#home">Bun Bun Bakery</a></li>
-        <li><a href="#news"><span>cart</span></a></li>
-        <li><a href="#contact"><span>profile</span></a></li>
+        <li style="float:left; font-family: 'Bodoni 72'; font-size: 30px;"><a href="./index.html">Bun Bun Bakery</a></li>
+        <li><a href="#"><span>cart</span></a></li>
+        <li><a href="#"><span>profile</span></a></li>
+        <li><a href="#footer"><span>contact us</span></a></li>
       </ul>
 </div>
-    <div class="container3">
+    <div class="location-container">
+    <div>
     <a href="#" class="location">
         <img class="icon" src="./icons/pin 1.png">
-        <span>pittsburgh,PA</span></a>
+        <p>pittsburgh,PA</p></a>
+    </div>
+    <div class="tertiary">
+    <a href="#"><span>change</span></a>
+    </div>
     </div>
     <div class= "introduction">
     <div>
@@ -23,15 +29,17 @@
     </div>
     <div class="intro-banner">
     <h1>Bun Bun Bakery</h1>
-    <p5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<span>Ut enim ad minim veniam, quis nostrud exercitation ullamco</span> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p5>
+    <p5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p5>
     <br>
-    <button class="home-button">shop now</button>
+    <a href="#product-listing">
+    <button class="home-button" href="product-listing">shop now</button>
+    </a>
     </div>
 </div>
 </div>
 <div class="container2">
     <h3>try our <span>cinammon rolls.</span></h3>
-<div class = "wrapper2">
+<div class = "wrapper2" id="product-listing">
     <div class="productcard">
         <img class = "pic" src= "./images/yosep-sugiarto-DE-ZospqOqU-unsplash.jpg">
         <div class= "content">
@@ -40,7 +48,7 @@
                 <h6 style="color:#A2A2A2; font-size: 18px;">$4.50</h6>
             </div>
             <button>quick view</button>
-            <a href="#"><span>learn more</span></a>
+            <a href="./product_details.html"><span>learn more</span></a>
         </div>
     </div>
     <div class="productcard">
@@ -123,7 +131,7 @@
 </div>
 </body>
 
-<footer>
+<footer id="footer">
     <div class="footer-flex">
     <div class ="address" style="color:white;">
         <h3 style="color:white;" >Contact Us</h3>
