@@ -308,23 +308,20 @@ h6 {
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
-    line-height: 36px;
     color: #000000;
 }
 
-.testimonialcard p1 {
+.testimonialcard .p1 {
     font-style: normal;
     font-weight: normal;
     padding-left: 40px;
     font-size: 20px;
-    line-height: 126.98%;
 }
 
-.testimonialcard p2{
+.testimonialcard .p2{
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 126.98%;
     color: #B2B2B2;
     padding-left: 40px;
 
