@@ -59,7 +59,7 @@ footer {
 .icon-flex{
     display:flex;
     align-items: center;
-    gap:30px;
+    gap:20px;
 }
 
 .location-container {
@@ -341,10 +341,6 @@ footer {
     background-color:#383838 ;
 }
 
-.footer-flex{
-    display: flex;
-    justify-content: left;
-}
 
 .footer-icon {
     height: 22px;
@@ -355,7 +351,7 @@ footer {
 .footer-flex{
     display:flex;
     justify-content: left;
-    gap:50px;
+    gap:150px;
 }
 
 /* product details */
