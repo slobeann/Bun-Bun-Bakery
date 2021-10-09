@@ -380,8 +380,9 @@ footer {
 
 .pd-heading{
     display:flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
+    gap:20px;
 }
 .pd h1 {
         font-style: normal;
@@ -504,3 +505,10 @@ form {
 
 }
 
+.bestseller {
+    height:25px;
+}
+
+.tag {
+    height:18px;
+}
