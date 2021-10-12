@@ -3,9 +3,11 @@
 <head>
     <title>Original Cinammon Roll</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="./script.js"></script>
 </head>
 
 <body>
+<div id="overlay" onclick="off()"></div>
 <div class="navigation">
     <ul>
         <li style="float:left; font-family: 'Bodoni 72'; font-size: 30px;"><a href="./index.html">Bun Bun Bakery</a></li>
@@ -71,8 +73,8 @@
      </div>
     <div class="p7">Expected delivery in 5 days</div>
     <div class="pd-buttons">
-    <button class="secondary-button">add to cart</button>
-    <button class="primary-button">buy now</button>
+    <button class="secondary-button" onclick= "on()">add to cart</button>
+    <button class="primary-button" onclick= "on()">buy now</button>
     </div>
     </div>
 </div>
