@@ -460,7 +460,7 @@ label {
     font-weight: normal;
     font-size: 16px;
     color: white;
-    width: 200px;
+    width:200px;
 }
 
 .pd-buttons {
@@ -567,3 +567,15 @@ form {
     width: 30px;
     height: 30px;
 }
+
+.details .name {
+    display:flex;
+    align-items: center;
+}
+
+#overlay-head{
+    display:flex;
+    align-items: center;
+}
+
+
