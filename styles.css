@@ -553,7 +553,7 @@ form {
     display:flex;
 }
 
-.image img{
+.image{
     width:199px;
     border-radius: 15px;
     height: 199px;
@@ -561,4 +561,9 @@ form {
 
 }
 
-
+#overlay-close{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
+    width: 30px;
+    height: 30px;
+}
