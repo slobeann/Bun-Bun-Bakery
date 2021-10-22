@@ -8,25 +8,28 @@
 <body>
 <div id="overlay">
     <div class="checkout">
-        <div id="overlay-head">
-        <h3>your cart(1)</h3>
         <button id="overlay-close">
             <img src= "./icons/delete.png">
         </button>
-        </div>
+        <h3>your cart(1)</h3>
         <div class ="product">
             <img class= "image" src="images/yosep-sugiarto-DE-ZospqOqU-unsplash.jpg" alt="original cinnamon roll">
             <div class="details">
                 <div class="name">
                 <h4>Original</h4>
+                <button>
                 <img style="height:18px; width: 18px;" src="./icons/trash 1.png">
+                </button>
                 </div>
                 <p>$4.50</p>
                 <div class="quant">
-
+                    <button>-</button>
+                    <input type="number" value="1">
+                    <button>+</button>
                 </div>
             </div>
         </div>
+        <div class="cart-buttons">
         <div style="padding-left:0px;" class="location-container">
             <div>
             <a href="#" class="location">
@@ -37,8 +40,23 @@
             <a href="#"><span>change</span></a>
             </div>
         </div>
+        <div class="checkout-details">
+        <div class="bill">
+            <h6>total</h6>
+            <h6>$4.50</h6>
+        </div>
+        <div class="bill">
+            <h6>shipping</h6>
+            <h6>$15</h6>
+        </div>
+        <div class="bill">
+            <h6>total</h6>
+            <h6>$19.50</h6>
+        </div>
+        </div>
         <button style="width:100%" class="primary-button">checkout as guest</button>
         <button style="width:100%" class="secondary-button">login</button>
+        </div>
     </div>
 </div>
 <div class="navigation">

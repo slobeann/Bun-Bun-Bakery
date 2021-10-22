@@ -4,11 +4,25 @@
 }*/
 
 /* common things */
+:root {
+    --primary-color:#FF4975;
+}
+
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
+}
 body {
     background: #FFFDF7;
     font-family: "Poppins";
 }
 
+button{
+    border:none;
+    background:none;
+    cursor: pointer;
+}
 
 /*navigation*/
 .navigation {
@@ -448,6 +462,7 @@ label {
     font-size: 16px;
     color: #FF4975;
     width: 200px;
+    font-family: Poppins;
 }
 
 .primary-button {
@@ -461,6 +476,7 @@ label {
     font-size: 16px;
     color: white;
     width:200px;
+    font-family: Poppins;
 }
 
 .pd-buttons {
@@ -516,14 +532,13 @@ form {
     position: fixed;
     display:none;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5);
     z-index: 2000;
-    cursor: pointer;
   }
 
 .checkout {
@@ -534,8 +549,10 @@ form {
     top:0;
     bottom:0;
     background-color:#FFFDF7;
-    transform: translateX(100%);
+    transform: translateX(100%); 
     padding: 30px;
+    display:flex;
+    flex-direction: column;
 }
 
 .checkout.slide-in {
@@ -549,33 +566,110 @@ form {
     100% { transform: translateX(0); }
 }
 
-.checkout.product {
-    display:flex;
-}
-
-.image{
-    width:199px;
-    border-radius: 15px;
-    height: 199px;
-    object-fit: fill;
-
-}
-
 #overlay-close{
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
     width: 30px;
     height: 30px;
+    border-radius:50%;
+    border:none;
+    padding:7px;
+    position:absolute;
+    top:20px;
+    right:40px;
+    cursor:pointer;
+
 }
 
+#overlay-close img{
+    height:100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.checkout .product {
+    display:flex;
+    gap: 20px;
+}
+
+.product .image{
+    width:40%;
+    border-radius: 15px;
+    height:160px;
+    object-fit: cover;
+
+}
+
+.details {
+    width: 50%;
+}
 .details .name {
     display:flex;
     align-items: center;
+    gap: 20px;
 }
 
-#overlay-head{
+.details .name h4{
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+}
+
+.details p{
+    color: #C1C1C1;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.cart-buttons{
+    margin-bottom: 60px;
+    margin-top: auto;
+}
+
+.cart-buttons .primary-button{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.bill{
     display:flex;
-    align-items: center;
+    margin:0px;
+    padding-bottom: 10px;
+    justify-content: space-between;
 }
 
+.bill h6{
+    margin:0px;
+    font-size: 14px;
+}
 
+.checkout .location-container{
+    border-bottom: 1px solid #E5E5E5;;
+}
+
+.checkout .checkout-details{
+    padding-top: 10px;
+}
+
+.checkout .product .quant{
+    display:flex;
+    justify-content: space-between;
+    width: 120px;
+    border: 2px solid var(--primary-color);
+    border-radius: 9px;
+    padding:5px;
+}
+
+.checkout .product .quant input{
+    border: none;
+    width: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.quant button{
+    font-size: 26px;
+    color: var(--primary-color);
+}
