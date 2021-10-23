@@ -12,22 +12,24 @@
             <img src= "./icons/delete.png">
         </button>
         <h3>your cart(1)</h3>
+        <div class="cart-items">
         <div class ="product">
             <img class= "image" src="images/yosep-sugiarto-DE-ZospqOqU-unsplash.jpg" alt="original cinnamon roll">
             <div class="details">
                 <div class="name">
-                <h4>Original</h4>
-                <button>
+                <h4 class="cart-item-title">Original</h4>
+                <button class="trash">
                 <img style="height:18px; width: 18px;" src="./icons/trash 1.png">
                 </button>
                 </div>
-                <p>$4.50</p>
+                <p class="cart-price">$4.50</p>
                 <div class="quant">
-                    <button>-</button>
-                    <input type="number" value="1">
-                    <button>+</button>
+                    <button class="qty-decrease">-</button>
+                    <input class="cart-quantity" type="number" value="1">
+                    <button class="qty-increase">+</button>
                 </div>
             </div>
+        </div>
         </div>
         <div class="cart-buttons">
         <div style="padding-left:0px;" class="location-container">
@@ -43,7 +45,7 @@
         <div class="checkout-details">
         <div class="bill">
             <h6>total</h6>
-            <h6>$4.50</h6>
+            <h6 class="cart-total">$4.50</h6>
         </div>
         <div class="bill">
             <h6>shipping</h6>
@@ -51,7 +53,7 @@
         </div>
         <div class="bill">
             <h6>total</h6>
-            <h6>$19.50</h6>
+            <h6 class="bill-total">$19.50</h6>
         </div>
         </div>
         <button style="width:100%" class="primary-button">checkout as guest</button>
@@ -79,10 +81,10 @@
     <div class="pd">
     <div class="pd-heading">
     <div style="display: flex; align-items: center; gap:20px;">
-        <h1>Original</h1>
+        <h1 class= "roll-title">Original</h1>
         <img src="icons/bestseller.png" class="bestseller">
     </div>
-    <h1 style="color:#A2A2A2">$4.50</h1>
+    <h1 style="color:#A2A2A2" class="roll-price">$4.50</h1>
     </div>
     <div style="padding-bottom: 20px;">
         <img class= "icon-back" src="./icons/star.png" alt="rating star">
@@ -94,21 +96,21 @@
     <form>
         <div style="padding-bottom: 20px;">
         <label for="glaze">GLAZE</label><br>
-        <select id="glaze" class="dropdown">
-            <option value="1">none</option>
-            <option value="2">sugar-milk</option>
-            <option value="3">vanila-milk</option>
-            <option value="4">double-chocolate</option>
+        <select id="glaze" class="dropdown glaze">
+            <option value="none">none</option>
+            <option value="sugar-milk">sugar-milk</option>
+            <option value="vanila-milk">vanila-milk</option>
+            <option value="double-chocolate">double-chocolate</option>
         </select>
         </div>
 
         <div>
         <label for="qty">QUANTITY</label><br>
-        <select id="qty" class="dropdown">
+        <select id="qty" class="dropdown qty">
             <option value="1">1</option>
-            <option value="2">3</option>
-            <option value="3">6</option>
-            <option value="4">12</option>
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="12">12</option>
         </select>
         </div>
     </form>
@@ -125,7 +127,7 @@
     <div class="p7">Expected delivery in 5 days</div>
     <div class="pd-buttons">
     <button class="secondary-button add-to-cart">add to cart</button>
-    <button class="primary-button">buy now</button>
+    <button class="primary-button buy-now">buy now</button>
     </div>
     </div>
 </div>
