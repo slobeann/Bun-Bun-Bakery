@@ -622,6 +622,7 @@ form {
     color: #C1C1C1;
     font-weight: normal;
     font-size: 20px;
+    margin: 5px;
 }
 
 .cart-buttons{
@@ -674,4 +675,13 @@ form {
 .quant button{
     font-size: 26px;
     color: var(--primary-color);
+}
+
+.cart-item-details{
+    margin-top:10px;
+}
+
+.cart-item-details p{
+    font-size: 15px;
+    color: #000000;
 }
