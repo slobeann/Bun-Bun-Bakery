@@ -33,6 +33,18 @@ for(let i=0; i<addToCartButtons.length; i++){
     var button = addToCartButtons[i]
     button.addEventListener('click', addToCartClick)
 }
+
+/*var addQty = document.getElementsByClassName("qty-increase")
+for(let i=0; i<addQty.length; i++){
+  var increase= addQty[i]
+  increase.addEventListener('click', increaseQuantityOfItem)
+}
+
+var decreaseQty = document.getElementsByClassName("qty-decrease")
+for(let i=0; i<decreaseQty.length; i++){
+  var decrease= decreaseQty[i]
+  increase.addEventListener('click', decreaseQuantityOfItem)
+}*/
 }
 
 function removeCartItem(event){
@@ -47,9 +59,9 @@ function updateCartTotal(){
   for (let i=0; i< cartRows.length; i++){
       var cartRow= cartRows[i]
       var priceElement= cartRow.getElementsByClassName("cart-price")[0]
-      var quantityElement= cartRow.getElementsByClassName("cart-quantity")[0]
+      var quantityElement= cartRow.getElementsByClassName("cart-amount")[0]
       var price = parseFloat(priceElement.innerText.replace("$", ''))
-      var quantity = quantityElement.value
+      var quantity = parseFloat(quantityElement.innerText)
       total = total + (price * quantity)
   }
   var billTotal = total + 15
@@ -74,31 +86,54 @@ function addItemToCart(title, price, glaze, qty, imageSrc){
   cartRow.classList.add("product")
   var cartItems = document.getElementsByClassName("cart-items")[0]
   var cartItemNames = cartItems.getElementsByClassName("cart-item-title")
+  var cartItemGlaze= cartItems.getElementsByClassName("glaze")
+  console.log(cartItemGlaze)
   for(let i=0; i<cartItemNames.length; i++){
-    if(cartItemNames[i].innerText == title){
+    if(cartItemNames[i].innerText == title && cartItemGlaze[i].innerText == glaze){
       alert('This item is already in your cart')
       return
     }
   }
   var cartRowContents = `
-  <img class= "image" src="${imageSrc}" alt="original cinnamon roll">
-  <div class="details">
-      <div class="name">
-      <h4 class="cart-item-title">${title}</h4>
-      <button class="trash">
-      <img style="height:18px; width: 18px;" src="./icons/trash 1.png">
-      </button>
-      </div>
-      <p class="cart-price">${price}</p>
-      <div class="quant">
-          <button class="qty-decrease">-</button>
-          <input class="cart-quantity" type="number" value="${qty}">
-          <button class="qty-increase">+</button>
-      </div>
-</div>`
+            <img class= "image" src="${imageSrc}">
+            <div class="details">
+                <div class="name">
+                <h4 class="cart-item-title">${title}</h4>
+                <button class="trash">
+                <img style="height:18px; width: 18px;" src="./icons/trash 1.png">
+                </button>
+                </div>
+                <p class="cart-price">${price}</p>
+                <p style="font-size:15px; color:black;" class="glaze">${glaze}</p>
+                <p style="font-size:15px; color:black;" class="cart-amount">${qty}</p>
+            </div>`
 cartRow.innerHTML = cartRowContents
 cartItems.append(cartRow)
 cartRow.getElementsByClassName("trash")[0].addEventListener('click', removeCartItem)
 updateCartTotal()
 }
+
+/*function decreaseQuantityOfItem(event){
+    var buttonClicked = event.target
+    var counter= buttonClicked.parentElement
+    var counterValue= counter.getElementsByClassName("cart-quantity")[0].value
+    counterValue = parseInt(counterValue)
+    if(counterValue > 1){
+      counterValue = counterValue-1
+      
+    } else {
+      alert("Please delete the item from our cart instead!")
+    }
+  }
+    function increaseQuantityOfItem(event){
+    var buttonClicked = event.target
+    var counter = buttonClicked.parentElement
+    var cartQty= counter.getElementsByClassName("cart-quantity")[0]
+    var counterValue= cartQty.value
+    counterValue = parseInt(counterValue)
+    if(counterValue)
+    counterValue = counterValue*3
+    cartQty.value=counterValue
+    updateCartTotal()
+    }*/
 
