@@ -15,6 +15,7 @@ document.querySelector(".add-to-cart").addEventListener("click", function(){
   checkout.classList.add("slide-in");
 })
 
+
 document.querySelector("#overlay-close").addEventListener("click", function(){
   overlay.style.display="none";
   checkout.classList.remove("slide-in");
@@ -56,6 +57,7 @@ function updateCartTotal(){
   var cartItemContainer = document.getElementsByClassName("cart-items")[0]
   var cartRows = cartItemContainer.getElementsByClassName("product")
   var total=0
+  var totalamount=0
   for (let i=0; i< cartRows.length; i++){
       var cartRow= cartRows[i]
       var priceElement= cartRow.getElementsByClassName("cart-price")[0]
@@ -63,10 +65,12 @@ function updateCartTotal(){
       var price = parseFloat(priceElement.innerText.replace("$", ''))
       var quantity = parseFloat(quantityElement.innerText)
       total = total + (price * quantity)
+      totalamount= totalamount + quantity
   }
-  var billTotal = total + 15
+  var billTotal = total + 5
   document.getElementsByClassName("cart-total")[0].innerText = "$" + total
   document.getElementsByClassName("bill-total")[0].innerText = "$" + billTotal
+  document.getElementsByClassName("cart-heading")[0].innerText= "cart(" + totalamount +")"
 }
 
 function addToCartClick(event){
