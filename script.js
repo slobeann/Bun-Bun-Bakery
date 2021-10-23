@@ -28,18 +28,6 @@ for (let i=0; i<removeCartItemButtons.length; i++){
   button.addEventListener('click', removeCartItem)
 }
 
-var addQty = document.getElementsByClassName("qty-increase")
-for(let i=0; i<addQty.length; i++){
-  var increase= addQty[i]
-  increase.addEventListener('click', increaseQuantityOfItem)
-}
-
-var decreaseQty = document.getElementsByClassName("qty-decrease")
-for(let i=0; i<decreaseQty.length; i++){
-  var decrease= decreaseQty[i]
-  increase.addEventListener('click', decreaseQuantityOfItem)
-}
-
 var addToCartButtons = document.getElementsByClassName("add-to-cart")
 for(let i=0; i<addToCartButtons.length; i++){
     var button = addToCartButtons[i]
@@ -62,7 +50,7 @@ function updateCartTotal(){
       var quantityElement= cartRow.getElementsByClassName("cart-quantity")[0]
       var price = parseFloat(priceElement.innerText.replace("$", ''))
       var quantity = quantityElement.value
-      total = total + (price*quantity)
+      total = total + (price * quantity)
   }
   var billTotal = total + 15
   document.getElementsByClassName("cart-total")[0].innerText = "$" + total
@@ -111,34 +99,6 @@ function addItemToCart(title, price, glaze, qty, imageSrc){
 cartRow.innerHTML = cartRowContents
 cartItems.append(cartRow)
 cartRow.getElementsByClassName("trash")[0].addEventListener('click', removeCartItem)
-cartRow.getElementsByClassName("qty-increase")[0].addEventListener('click', increaseQuantityOfItem)
-cartRow.getElementsByClassName("qty-decrease")[0].addEventListener('click', decreaseQuantityOfItem)
 updateCartTotal()
 }
-
-/*function decreaseQuantityOfItem(event){
-    var buttonClicked = event.target
-    var counter= buttonClicked.parentElement
-    var counterValue= counter.getElementsByClassName("cart-quantity")[0].value
-    counterValue = parseInt(counterValue)
-    if(counterValue > 1){
-      counterValue = counterValue-1
-      
-    } else {
-      alert("Please delete the item from our cart instead!")
-    }
-  }
-
-    function increaseQuantityOfItem(event){
-    var buttonClicked = event.target
-    var counter = buttonClicked.parentElement
-    var cartQty= counter.getElementsByClassName("cart-quantity")[0]
-    var counterValue= cartQty.value
-    counterValue = parseInt(counterValue)
-    counterValue = counterValue+1
-    cartQty.value=counterValue
-    updateCartTotal()
-
-    }
-  */
 
