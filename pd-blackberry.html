@@ -7,10 +7,48 @@
 </head>
 
 <body>
+<div id="overlay">
+        <div class="checkout">
+            <button id="overlay-close">
+                <img src= "./icons/delete.png">
+            </button>
+            <h3 class="cart-heading">your cart(0)</h3>
+            <div class="cart-items">
+            </div>
+            <div class="cart-buttons">
+            <div style="padding-left:0px;" class="location-container">
+                <div>
+                <a href="#" class="location">
+                    <img class="icon" src="./icons/pin1.png" alt="location icon">
+                    <p>pittsburgh, PA</p></a>
+                </div>
+                <div class="tertiary">
+                <a href="#"><span>change</span></a>
+                </div>
+            </div>
+            <div class="checkout-details">
+            <div class="bill">
+                <h6>total</h6>
+                <h6 class="cart-total">$0</h6>
+            </div>
+            <div class="bill">
+                <h6>shipping</h6>
+                <h6>$5</h6>
+            </div>
+            <div class="bill">
+                <h6>total</h6>
+                <h6 class="bill-total">$5</h6>
+            </div>
+            </div>
+            <button style="width:100%" class="primary-button">checkout as guest</button>
+            <button style="width:100%" class="secondary-button">login</button>
+            </div>
+        </div>
+</div>
 <div class="navigation">
     <ul>
         <li style="float:left; font-family: 'Bodoni 72'; font-size: 30px;"><a href="./index.html">Bun Bun Bakery</a></li>
-        <li><a href="#"><span>cart</span></a></li>
+        <li class="cart-button"><a href="#"><span>cart</span></a></li>
         <li><a href="#"><span>profile</span></a></li>
         <li><a href="#footer"><span>contact us</span></a></li>
       </ul>
@@ -26,8 +64,8 @@
     </div>
     <div class="pd">
     <div class="pd-heading">
-    <h1>blackberry</h1>
-    <h1 style="color:#A2A2A2">$4.50</h1>
+    <h1 class= "roll-title">blackberry</h1>
+    <h1 style="color:#A2A2A2" class="roll-price">$4.00</h1>
     </div>
     <div style="padding-bottom: 20px;">
         <img class= "icon-back" src="./icons/star.png" alt="rating star">
@@ -38,22 +76,22 @@
     <div class="p5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
     <form>
         <div style="padding-bottom: 20px;">
-        <label for="glaze">GLAZE</label><br>
-        <select id="glaze" class="dropdown">
-            <option value="1">none</option>
-            <option value="2">sugar-milk</option>
-            <option value="3">vanila-milk</option>
-            <option value="4">double-chocolate</option>
+        <label for="glaze" >GLAZE</label><br>
+        <select id="glaze" class="dropdown glaze">
+            <option value="no-glaze">none</option>
+            <option value="sugar-milk">sugar-milk</option>
+            <option value="vanilla-milk">vanilla-milk</option>
+            <option value="double-chocolate">double-chocolate</option>
         </select>
         </div>
 
         <div>
         <label for="qty">QUANTITY</label><br>
-        <select id="qty" class="dropdown">
+        <select id="qty" class="dropdown qty">
             <option value="1">1</option>
-            <option value="2">3</option>
-            <option value="3">6</option>
-            <option value="4">12</option>
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="12">12</option>
         </select>
         </div>
     </form>
@@ -69,8 +107,8 @@
      </div>
     <div class="p7">Expected delivery in 5 days</div>
     <div class="pd-buttons">
-    <button class="secondary-button">add to cart</button>
-    <button class="primary-button">buy now</button>
+    <button class="secondary-button add-to-cart">add to cart</button>
+    <button class="primary-button buy-now">buy now</button>
     </div>
     </div>
 </div>
