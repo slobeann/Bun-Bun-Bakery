@@ -10,6 +10,8 @@ function ready(){
 var overlay = document.getElementById("overlay");
 var checkout = document.querySelector(".checkout");
 
+updateCart()
+
 document.querySelector(".navigation .cart-button").addEventListener("click", function(event){
   console.log('hi')
   event.preventDefault()
@@ -46,24 +48,13 @@ for(let i=0; i<addToCartButtons.length; i++){
     var button = addToCartButtons[i]
     button.addEventListener('click', addToCartClick)
 }
-
-/*var addQty = document.getElementsByClassName("qty-increase")
-for(let i=0; i<addQty.length; i++){
-  var increase= addQty[i]
-  increase.addEventListener('click', increaseQuantityOfItem)
-}
-
-var decreaseQty = document.getElementsByClassName("qty-decrease")
-for(let i=0; i<decreaseQty.length; i++){
-  var decrease= decreaseQty[i]
-  increase.addEventListener('click', decreaseQuantityOfItem)
-}*/
 }
 
 function removeCartItem(event){
-  var buttonClicked = event.target
-    buttonClicked.parentElement.parentElement.parentElement.parentElement.remove()
+  var title = event.currentTarget.dataset.title
+  var glaze = event.currentTarget.dataset.glaze
     updateCartTotal()
+    removeItemFromLocalStorage(title, glaze)
 }
 function updateCartTotal(){
   var cartItemContainer = document.getElementsByClassName("cart-items")[0]
@@ -94,7 +85,7 @@ function addToCartClick(event){
   var glaze = shopItem.getElementsByClassName("glaze")[0].value
   var qty = shopItem.getElementsByClassName("qty")[0].value
   var imageSrc= itemImage.getElementsByClassName("banner-pd")[0].src
-  addItemToCart(title, price, glaze, qty, imageSrc)
+  updateLocalStorage(title, price, glaze, qty, imageSrc)
 }
 
 function addItemToCart(title, price, glaze, qty, imageSrc){
@@ -104,18 +95,12 @@ function addItemToCart(title, price, glaze, qty, imageSrc){
   var cartItemNames = cartItems.getElementsByClassName("cart-item-title")
   var cartItemGlaze= cartItems.getElementsByClassName("glaze")
   console.log(cartItemGlaze)
-  for(let i=0; i<cartItemNames.length; i++){
-    if(cartItemNames[i].innerText == title && cartItemGlaze[i].innerText == glaze){
-      alert('This item is already in your cart')
-      return
-    }
-  }
   var cartRowContents = `
             <img class= "image" src="${imageSrc}">
             <div class="details">
                 <div class="name">
                 <h4 class="cart-item-title">${title}</h4>
-                <button class="trash">
+                <button class="trash" data-title="${title}" data-glaze="${glaze}">
                 <img style="height:18px; width: 18px;" src="./icons/trash 1.png">
                 </button>
                 </div>
@@ -126,30 +111,48 @@ function addItemToCart(title, price, glaze, qty, imageSrc){
 cartRow.innerHTML = cartRowContents
 cartItems.append(cartRow)
 cartRow.getElementsByClassName("trash")[0].addEventListener('click', removeCartItem)
-updateCartTotal()
+
 }
 
-/*function decreaseQuantityOfItem(event){
-    var buttonClicked = event.target
-    var counter= buttonClicked.parentElement
-    var counterValue= counter.getElementsByClassName("cart-quantity")[0].value
-    counterValue = parseInt(counterValue)
-    if(counterValue > 1){
-      counterValue = counterValue-1
-      
-    } else {
-      alert("Please delete the item from our cart instead!")
-    }
+function updateLocalStorage(title, price, glaze, qty, imageSrc) {
+  var cartItems = document.getElementsByClassName("cart-items")[0]
+  cartItems.innerHTML = ""
+  var cartItemsData = JSON.parse(localStorage.getItem("cart")) || []
+  var similarItem = cartItemsData.filter(item => {
+    return item.title === title && item.glaze === glaze
+  })
+  console.log(similarItem)
+  if(similarItem.length>0)
+  {
+    alert("This item is already in your cart!")
+  } else {
+    cartItemsData.push({
+      title, price, glaze, qty, imageSrc})
   }
-    function increaseQuantityOfItem(event){
-    var buttonClicked = event.target
-    var counter = buttonClicked.parentElement
-    var cartQty= counter.getElementsByClassName("cart-quantity")[0]
-    var counterValue= cartQty.value
-    counterValue = parseInt(counterValue)
-    if(counterValue)
-    counterValue = counterValue*3
-    cartQty.value=counterValue
-    updateCartTotal()
-    }*/
+  cartItemsData.map(item => {
+    addItemToCart(item.title, item.price, item.glaze, item.qty, item.imageSrc)
+  })
+  localStorage.setItem("cart", JSON.stringify(cartItemsData))
+  updateCartTotal()
+}
 
+function updateCart(){
+  var cartItems = document.getElementsByClassName("cart-items")[0]
+  cartItems.innerHTML = ""
+  var cartItemsData = JSON.parse(localStorage.getItem("cart")) || []
+    cartItemsData.map(item => {
+      addItemToCart(item.title, item.price, item.glaze, item.qty, item.imageSrc)
+    })
+  updateCartTotal()
+}
+
+function removeItemFromLocalStorage(title, glaze){
+  var cartItems = document.getElementsByClassName("cart-items")[0]
+  cartItems.innerHTML = ""
+  var cartItemsData = JSON.parse(localStorage.getItem("cart")) || []
+  var newList = cartItemsData.filter(item => {
+    return item.title != title || item.glaze != glaze
+  })
+  localStorage.setItem("cart", JSON.stringify(newList))
+  updateCart()
+}
