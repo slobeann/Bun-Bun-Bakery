@@ -685,3 +685,8 @@ form {
     font-size: 15px;
     color: #000000;
 }
+
+.checkout .cart-items {
+    height: 340px;
+    overflow-y: auto;
+}
