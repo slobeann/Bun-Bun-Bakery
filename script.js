@@ -74,7 +74,7 @@ function updateCartTotal(){
   document.getElementsByClassName("cart-total")[0].innerText = "$" + total
   document.getElementsByClassName("bill-total")[0].innerText = "$" + billTotal
   document.getElementsByClassName("cart-heading")[0].innerText= "cart(" + totalamount +")"
-  document.getElementsByClassName("cart-button")[0].innerText = "cart(" + totalamount +")"
+  document.getElementById("nav-cart").innerText = "cart(" + totalamount +")"
 
 }
 
